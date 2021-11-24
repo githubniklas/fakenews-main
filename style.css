@@ -1,91 +1,156 @@
-html {
-	padding: 0;
-	margin: 0;
-	background-color: #FFF;
+*{
+  padding: 0;
+  margin: 0; 
+  box-sizing: border-box;
+  font-size: 16px;
+}
+body{
+   display: grid;
+   grid-template-areas: 
+   "header"
+   "content"
+   "footer";
+   height: 2000px;
+   grid-template-rows: 100px 1fr 400px;
+   line-height: 1.5;
+
 }
 
-body {
-	font-family: Helvetica, sans-serif;
-	font-size: 93%;
-	line-height: 1.5em;
-	padding: 0;
-	margin: 0;
+#content{
+   display: grid;
+   grid-template-rows: 3fr 7fr ;
+   background: lightgrey;
+
 }
+
 .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #99bbff;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    border: 1px dotted black;
-    
-  }
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #99bbff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  border: 1px dotted black;
   
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: white;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: white;
+}
+
+/*Hover effekter til sidebar*/
+
+#welcome:hover {
+   background-color: white;
+   color:  #99bbff;
+}
+#reflectionessay:hover {
+   background-color: white;
+   color:  #99bbff;
+}
+#accessibility:hover {
+   background-color: white;
+   color:  #99bbff;
+}
+#topicalinfo:hover {
+   background-color: white;
+   color:  #99bbff;
+}
+#fun:hover {
+   background-color: white;
+   color:  #99bbff;
+}
+
+/*Hover effekter til sidebar slutt*/
+
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#mySidebar ul li a:hover{
+  background:#ff6e00;
+  border-radius: 2px;
+}
+
+.openbtn {
+  font-size: 26px;
+  cursor: pointer;
+  background-color: #99bbff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: white;
+}
+
+#main {
+  position: fixed;
+  transition: margin-left 0.5s;
+  padding: 24px;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: #99bbff;
+  min-height: 103px;
+}
+.logo{
+    position: fixed;
     display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    color: white;
-  }
-  
-  .sidebar .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  
-  .openbtn {
-    font-size: 26px;
-    cursor: pointer;
-    background-color: #99bbff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-  
-  .openbtn:hover {
-    background-color: white;
-  }
-  
-  #main {
+    max-width: 125px;
+    display: inline;
+    right: 5px;
+    top: 5px;
+
+    
+}
+.header{
+    grid-area: header;
     position: fixed;
-    transition: margin-left 0.5s;
-    padding: 24px;
-    width: 100%;
     top: 0px;
-    left: 0px;
-    background-color: #99bbff;
-    min-height: 54px;
-  }
-  .logo{
-      position: fixed;
-      display: block;
-      max-width: 125px;
-      display: inline;
-      right: 5px;
-      top: 5px;
-  }
+    width: 50%;
+    z-index: 99;
+    display: flex;
+    
+}
 
-  .header{
-      position: fixed;
-      top: 0px;
-      width: 100%;
-      
-  }
-
+.intro{
+  
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   position: relative;
+   background: grey;
+     
+}
+.intro:before{
+   content: '';
+   background: url(./images/1homepage.jpg) no-repeat center center/cover;
+   opacity: 0.4;
+   position: relative;
+   top:0;
+   left: 0;
+   width: 100%;
+   height: 50%;
+}
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
@@ -114,6 +179,8 @@ p {
   width: 100%;
   height: 100%;
 }
+
+
 
 .container {
 	max-width: 700px;
